@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\IPlayerReference.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Platform.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <None Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\README_Basic.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/kzumu/Documents/DMB/SPR/BSPR01XX/Platformer/Platformer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
