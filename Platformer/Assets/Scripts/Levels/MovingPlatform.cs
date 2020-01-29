@@ -47,6 +47,11 @@ public class MovingPlatform : MonoBehaviour, IPlayerReference
         player = collision.gameObject.GetComponent<Rigidbody>();
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        UnsetReference();
+    }
+
     // Moving itself and the player standing on it to the next position.
     void FixedUpdate() {
         // Distance moved equals elapsed time times speed..

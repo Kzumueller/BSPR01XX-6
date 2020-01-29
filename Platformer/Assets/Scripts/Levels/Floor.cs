@@ -38,12 +38,20 @@ public class Floor : MonoBehaviour
     private void OnCollisionEnter(Collision collision) {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        livesLabel.text = $"Lives: {--lives}";
+        AlterLives(-1);
 
         if (0 < lives)
             collision.gameObject.transform.position = LastCheckPoint.position + new Vector3(0f, .25f);
-        else
+    }
+
+    // adds/subtracts lives and updates the corresponding label
+    public void AlterLives(int addedLives) {
+        lives += addedLives;
+
+        if (1 > lives)
             GameOver();
+
+        livesLabel.text = $"Lives: {lives}";
     }
 
     public void GameOver() {
