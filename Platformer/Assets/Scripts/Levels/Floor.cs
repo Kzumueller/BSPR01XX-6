@@ -17,11 +17,14 @@ public class Floor : MonoBehaviour
 
     public int startingLives = 5;
 
+    private AudioSource playerAudio;
+
     private int lives;
 
     private Timer timer;
 
     private void Start() {
+        playerAudio = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         lives = startingLives;
         timer = new Timer(timeForCompletion);
     }
@@ -51,6 +54,7 @@ public class Floor : MonoBehaviour
         if (1 > lives)
             GameOver();
 
+        playerAudio.Play();
         livesLabel.text = $"Lives: {lives}";
     }
 
